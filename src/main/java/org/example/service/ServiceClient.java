@@ -28,7 +28,8 @@ public class ServiceClient {
                     client = updateObject(client);
                     break;
                 case 4:
-                    System.out.println(deleteObject(client));
+                    client=deleteObject(client);
+                    System.out.println(client);
                     break;
                 case 5:
                     return;
