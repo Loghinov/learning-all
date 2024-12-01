@@ -6,8 +6,7 @@ import java.util.Scanner;
 
 public class ServiceClient {
 
-    public static void serviceAcces() {
-        Client client = new Client();
+    public static Client serviceAcces(Client client) {
         while (true) {
             System.out.println("Select an option:");
             System.out.println("1. Get client information");
@@ -28,11 +27,10 @@ public class ServiceClient {
                     client = updateObject(client);
                     break;
                 case 4:
-                    client=deleteObject(client);
-                    System.out.println(client);
+                    System.out.println(deleteObject(client));
                     break;
                 case 5:
-                    return;
+                    return client;
                 default:
                     System.out.println("Invalid option");
                     break;

@@ -5,18 +5,19 @@ import org.example.entity.Transport;
 import java.util.Scanner;
 
 public class ServiceTransport {
-    public static void serviceAcces() {
-        Transport transport = new Transport();
+    public static Transport serviceAcces(Transport transport) {
         while (true) {
             System.out.println("Select an option");
             System.out.println("1. Get  transport information");
             System.out.println("2. Create transport");
             System.out.println("3. Update transport");
             System.out.println("4. Delete transport");
-            System.out.println("5. Exit");
+            System.out.println("0. Return");
             Scanner scanner = new Scanner(System.in);
             int option = scanner.nextInt();
             switch (option) {
+                case 0:
+                    return transport;
                 case 1:
                     showTransport(transport);
                     break;
@@ -30,19 +31,14 @@ public class ServiceTransport {
                     transport = deleteObject(transport);
                     System.out.println(deleteObject(transport));
                     break;
-                case 5:
-                    return;
                 default:
                     System.out.println("Invalid option");
                     break;
             }
-
         }
-
-
     }
 
-    public static Transport createObject() {
+    private static Transport createObject() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the id of the transport");
         int id = scanner.nextInt();
@@ -56,7 +52,7 @@ public class ServiceTransport {
         return  transport;
     }
 
-    public static Transport updateObject(Transport object) {
+    private static Transport updateObject(Transport object) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the new id of the transport");
         int newId = scanner.nextInt();
@@ -64,11 +60,11 @@ public class ServiceTransport {
         return object;
     }
 
-    public static Transport deleteObject(Transport object) {
+    private static Transport deleteObject(Transport object) {
         return new Transport();
     }
 
-    public static void showTransport(Transport transport) {
+    private static void showTransport(Transport transport) {
         System.out.println(transport);
     }
 }

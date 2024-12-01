@@ -27,5 +27,6 @@ public class Transport {
     public String toString() {
         return " Transport id: "+id+" TransportName: "+transportName+" TransportType: "+transportType+" TransportDescription: "+transportDescription;
     }
+
 }
 

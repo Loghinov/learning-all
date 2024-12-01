@@ -1,17 +1,12 @@
 package org.example.service;
 
+import org.example.entity.Client;
 import org.example.entity.Marfa;
-
-import java.sql.SQLOutput;
 import java.util.Scanner;
-import java.util.logging.SocketHandler;
-
-import static org.example.service.ServiceClient.deleteObject;
 
 public class ServiceMarfa {
 
-    public static void serviceAcces() {
-        Marfa marfa = new Marfa();
+    public static  Marfa serviceAcces(Marfa marfa) {
         while (true) {
             System.out.println("Select an option:");
             System.out.println("1. Get marfa informations");
@@ -36,7 +31,7 @@ public class ServiceMarfa {
                     System.out.println(deleteObject(marfa));
                     break;
                 case 5:
-                    return;
+                    return (marfa);
                 default:
                     System.out.println("Invalid option");
                     break;
@@ -44,7 +39,7 @@ public class ServiceMarfa {
         }
     }
 
-    public static Marfa createObject() {
+    private static Marfa createObject() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter your ID: ");
         int id = scanner.nextInt();
@@ -58,7 +53,7 @@ public class ServiceMarfa {
         return marfa;
     }
 
-    public static Marfa updateObject(Marfa object) {
+    private static Marfa updateObject(Marfa object) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter your new amount: ");
         String newAmount = scanner.nextLine();
@@ -66,11 +61,11 @@ public class ServiceMarfa {
         return object;
     }
 
-    public static Marfa deleteObject(Marfa object) {
+    private static Marfa deleteObject(Marfa object) {
         return new Marfa();
     }
 
-    public static void showMarfa(Marfa marfa) {
+    private static void showMarfa(Marfa marfa) {
         System.out.println(marfa);
     }
 }

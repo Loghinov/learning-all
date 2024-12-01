@@ -1,29 +1,30 @@
 package org.example.entity;
 
 public class Marfa {
-    private int id;
-    private String name;
-    private String type;
-    private String amount;
+    private int marfaId;
+    private String marfaName;
+    private String marfaType;
+    private String marfaAmount;
 
     public Marfa() {};
+
     public Marfa(int id, String name, String type, String amount) {
-        this.id = id;
-        this.name = name;
-        this.type = type;
-        this.amount = amount;
+        this.marfaId = id;
+        this.marfaName = name;
+        this.marfaType = type;
+        this.marfaAmount = amount;
     }
-    public int getId() {return id;}
-    public void setId(int id) {this.id = id;}
-    public String getName() {return name;}
-    public void setName(String name) {this.name = name;}
-    public String getType() {return type;}
-    public void setType(String type) {this.type = type;}
-    public String getAmount() {return amount;}
-    public void setAmount(String amount) {this.amount = amount;}
+    public int getId() {return marfaId;}
+    public void setId(int id) {this.marfaId = id;}
+    public String getName() {return marfaName;}
+    public void setName(String name) {this.marfaName = name;}
+    public String getType() {return marfaType;}
+    public void setType(String type) {this.marfaType = type;}
+    public String getAmount() {return marfaAmount;}
+    public void setAmount(String amount) {this.marfaAmount = amount;}
 
     @Override
     public String toString(){
-        return "id: "+id+" name: "+name+" type: "+type+" amount: "+amount;
+        return "id: "+marfaId+" name: "+marfaName+" type: "+marfaType+" amount: "+marfaAmount;
     }
 }
